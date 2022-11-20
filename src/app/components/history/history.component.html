@@ -1,0 +1,13 @@
+<app-search (country)="countrySelected($event)" (onClearAction)="clearSearch($event, 'country')"></app-search>
+
+<p-dropdown *ngIf="showYear" placeholder="Select" [options]="years" [(ngModel)]="selectedyear" optionLabel="year"
+    [showClear]="true" (onChange)="yearSelected()" (onClear)="clearSearch($event)"></p-dropdown>
+
+<div *ngIf="countryStat; else stat">Please select the country and year which you want to see the history</div>
+
+<ng-template #stat>
+    <div>Total Case: {{ totalCases[0] }}M</div>
+    <div>Recovered: {{ recovered[0] }}M</div>
+    <div>Deaths: {{ deaths[0] }}M</div>
+    <p-chart type="bar" [data]="basicData"></p-chart>
+</ng-template>

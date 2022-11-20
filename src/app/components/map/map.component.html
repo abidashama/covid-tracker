@@ -1,0 +1,8 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8 map-pan">
+            <app-g-chart *ngIf="!loading" [type]="'geochart'" [data]="data_confirmed" [options]="options"
+                [elementId]="'covidMap'"></app-g-chart>
+        </div>
+    </div>
+</div>

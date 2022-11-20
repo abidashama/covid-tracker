@@ -6,6 +6,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './core/core.module';
 import { Constants } from './config/constants';
 import { FormsModule } from '@angular/forms';
+import { CovidDataService } from './core/services/covid-data.service';
+import { GoogleChartBaseService } from './core/services/google-chart-base.service';
+import { GoogleChartService } from './core/services/google-chart.service';
+import { TableModule } from 'primeng/table';
+import { ChartModule } from 'primeng/chart';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +18,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { StatisticsComponent } from './components/statistics/statistics.component';
 import { SearchComponent } from './components/search/search.component';
+import { GChartComponent } from './components/g-chart/g-chart.component';
+import { MapComponent } from './components/map/map.component';
+import { HistoryComponent } from './components/history/history.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +28,10 @@ import { SearchComponent } from './components/search/search.component';
     DashboardComponent,
     SidebarComponent,
     StatisticsComponent,
-    SearchComponent
+    SearchComponent,
+    GChartComponent,
+    MapComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,
@@ -29,9 +40,11 @@ import { SearchComponent } from './components/search/search.component';
     DropdownModule,
     HttpClientModule,
     CoreModule,
-    FormsModule
+    FormsModule,
+    TableModule,
+    ChartModule
   ],
-  providers: [Constants],
+  providers: [Constants, CovidDataService, GoogleChartBaseService, GoogleChartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

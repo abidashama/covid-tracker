@@ -1,0 +1,12 @@
+p-chart {
+    div {
+        canvas {
+            width: 300px !important;
+            height: 300px !important;
+        }
+    }
+}
+
+.charts {
+    display: flex;
+}

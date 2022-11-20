@@ -2,6 +2,32 @@
     <div class="header">
         <h4>{{ title }}</h4>
 
-        <app-search></app-search>
+        <app-search (country)="countrySelected($event)" (onClearAction)="clearSearch($event)"></app-search>
     </div>
+
+    <div class="countryList">
+        <p-table [value]="tableData" [scrollable]="true" scrollHeight="600px">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Country</th>
+                    <th>Continent</th>
+                    <th>Population</th>
+                    <th>Total Cases</th>
+                    <th>Recovered</th>
+                    <th>Deaths</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-country>
+                <tr>
+                    <td>{{country.country}}</td>
+                    <td>{{country.continent}}</td>
+                    <td>{{country.population}}</td>
+                    <td>{{country.cases.total}}</td>
+                    <td>{{country.cases.recovered}}</td>
+                    <td>{{country.deaths.total}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+
 </div>

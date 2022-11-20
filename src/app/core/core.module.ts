@@ -10,11 +10,11 @@ import { ApiService } from './services/api.service';
     CommonModule
   ],
   providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: HeadersInterceptor,
-      multi: true
-    },
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: HeadersInterceptor,
+    //   multi: true
+    // },
     ApiService
   ]
 })

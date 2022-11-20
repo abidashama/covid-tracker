@@ -1,5 +1,5 @@
 <p-dropdown [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name" [filter]="true" filterBy="name"
-    [showClear]="true" placeholder="Select a Country">
+    [showClear]="true" placeholder="Select a Country" (onChange)="countrySelected()" (onClear)="onClear()">
     <ng-template pTemplate="selectedItem">
         <div class="country-item country-item-value" *ngIf="selectedCountry">
             <div>{{selectedCountry.name}}</div>

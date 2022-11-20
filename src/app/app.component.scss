@@ -1,7 +1,15 @@
 .wrapper {
     display: flex;
+    height: 100vh;
 }
 
 .content {
+    padding: 2rem;
     flex-basis: 100%;
+}
+
+.header {
+    padding: 20px;
+    text-align: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }

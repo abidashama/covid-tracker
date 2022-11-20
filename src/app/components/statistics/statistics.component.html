@@ -1,1 +1,16 @@
-<p>statistics works!</p>
+<div class="wrapper">
+    <app-search (country)="countrySelected($event)" (onClearAction)="clearSearch($event)"></app-search>
+
+    <div *ngIf="countryStat; else stat">Please select the country which you want to see the statistics</div>
+
+    <ng-template #stat>
+        <div>Population: {{ totalPopulation }}</div>
+        <div>Total tests: {{ tests }}</div>
+        <div>Deaths: {{ deaths }}</div>
+        <div>Recovered: {{ recovered }}</div>
+        <div class="charts">
+            <p-chart type="pie" [data]="pieChartData"></p-chart>
+            <p-chart type="bar" [data]="barChartData"></p-chart>
+        </div>
+    </ng-template>
+</div>
